@@ -1,12 +1,11 @@
 
     .contact-card {
-      margin-top: 30px;
       display: flex;
       align-items: center;
       background-color: lightgray;
       padding: 15px;
       border-radius: 10px;
-      width:fit-content;
+      width: 100%;
       font-family: sans-serif;
       box-shadow: 5px 5px 15px rgb(0, 9, 0, 10);
     }
