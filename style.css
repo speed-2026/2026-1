@@ -5,11 +5,12 @@
   padding: 0;
 }
 
-body {
+.FirstPagebody {
   font-family: sans-serif;
   background: white;
-	
+	padding-top: 140px;
  display: flex;
+ flex-wrap: wrap;
  justify-content: center;
  align-items: center;
  min-height: 100vh;
@@ -88,14 +89,6 @@ flex-wrap: wrap;}
   background-color: #6a21dc;
 }
 
-/* Main Body */
-.FirstPagebody {
-  padding-top: 140px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-height: 100vh;
-}
 
 /* Image Cards */
 .image-container {
@@ -248,5 +241,4 @@ a {
     height: auto;
   }
 }
-	
 
