@@ -3,7 +3,7 @@
 	text-align: center;
 	text-wrap: wrap;
 	justify-content: center;
-	width: 45%;
+	width: 75%;
 	padding: 15px;
 	margin: 15px;
 	height: 70px;
@@ -27,7 +27,7 @@ background-color: brown;}
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	width: 96%;
+	width: 90%;
 	height: 100%;
 	margin: 20px;
 	padding: 20px;
