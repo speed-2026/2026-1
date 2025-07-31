@@ -1,0 +1,42 @@
+.registernow {
+  background-color: #7c3aed;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px auto;
+}
+h2{
+margin-top: 2px;
+text-align: center;
+}
+
+h3{
+margin-top: 0px;
+text-align: center;
+}
+
+input {
+left: 20%;
+width: 30%;
+}
+label{
+  width: 30%;
+}
+.formgroup{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.formgroup label {
+  width: 150px;
+}
+.formgroup input,.formgroup select {
+  flex: 1;
+  padding: 5px;
+
+}
