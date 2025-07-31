@@ -1,64 +1,86 @@
 <!DOCTYPE html>
-<html lang="ml">
+<html lang="en">
+  <link rel="stylesheet" href="form.css">
 <head>
   <meta charset="UTF-8">
-  <title>Image Animation</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      flex-wrap: wrap;
-    }
-
-    .image-container {
-      position: relative;
-      width: 200px;
-      height: 150px;
-      margin: 15px;
-      opacity: 0;
-      transform: translateY(50px) scale(0.8);
-      transition: all 1s ease;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    }
-
-    .image-container.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
+  <h2>REGISTRATION FORM</h2>
+  <h3>SPEED CELEBRATION 2026</h3>
+  <form>
+  <div class="formgroup">
+    <label for="">NANE :</label>
+    <input value=""type="text">
+    </div>
 
-  <div class="image-container"><img src="img1.jpeg" alt="Image 1"></div>
-  <div class="image-container"><img src="img2.jpeg" alt="Image 2"></div>
-  <div class="image-container"><img src="img3.jpeg" alt="Image 3"></div>
-  <div class="image-container"><img src="img4.jpeg" alt="Image 4"></div>
-  <div class="image-container"><img src="img5.jpeg" alt="Image 5"></div>
-  <div class="image-container"><img src="img6.jpeg" alt="Image 6"></div>
+  <div class="formgroup">
+       <label for="">DESIGNATION :</label>
+    <input type="text" value="">
+    </div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const containers = document.querySelectorAll('.image-container');
-      containers.forEach((container, index) => {
-        setTimeout(() => {
-          container.classList.add('visible');
-        }, index * 400);
-      });
-    });
-  </script>
+  <div class="formgroup">
+       <label for="">PHONE NUMBER :</label>
+    <input type="number">
+    </div>
 
+  <div class="formgroup">
+    <label id="sajish" for="">OFFICE :</label>
+    <input type="text">
+  </div>
+
+<div class="formgroup">
+  <label>DISTRICT :</label>
+  <select name="DISTRICT" id="">
+  <option value="1">THIRUVANANTHAPURAM</option>
+  <option value="2">KOLLAM</option>
+  <option value="3">KOTTAYAM</option>
+  <option value="4">IDUKKI</option>
+  <option value="5">PATHANAMTHTTA</option>
+  <option value="6">ALAPPUZHA</option>
+  <option value="7">ERNAKULAM</option>
+  <option value="8">THRISSUR</option>
+  <option value="9">PALAKKAD</option>
+  <option value="10">MALAPPURAM</option>
+  <option value="11">KOZHIKODE</option>
+  <option value="12">WAYANAD</option>
+  <option value="13">KANNUR</option>
+  <option value="14">KASARGODE</option>
+  </select>
+</div>
+
+<div class="formgroup">
+    <label>METHODE OF PARTICIPATION</label>
+    <input type="radio" name="participation" value="single" onchange="single_family()">SINGLE</label>
+    <input type="radio" name="participation" value="family" onchange="single_family()">FAMILY</label>
+</div>
+
+
+<div id="family" style="display: none">
+  <div class="formgroup">
+    <label>NUMBER OF FAMILY MEMBER</label>
+    <input id="familymember" type="number" name="fNo" value=""  onchange="amountcalc()">
+  </div>
+  <div class="formgroup">
+    <label>NUMBER OF CHILDRAN (BELOW 5 YEARS)</label>
+    <input id="childnumber" type="number" value="">
+  </div> 
+</div>
+  
+  
+
+<label id="familyRS" style="display: none"></label><br>
+<label id="speedmember"></label><br>
+<label id="totalcharge"></label>
+
+</form>
+    <button class="registernow" onclick="submit()">
+      Submit
+    </button>
+
+ 
+ </div>
+<script src="fom.js"></script>
 </body>
 </html>
