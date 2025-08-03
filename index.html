@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" content="light">
   <title>SPEED GROUP</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css?v=1.2">
 </head>
 <body class="FirstPagebody">
 
@@ -31,19 +31,19 @@
   <marquee class="scroll" onclick="window.location.href='ConditionPage.html'">CLICK HERE TO REGISTER FOR SPEED CELEBRATION 2026</marquee>
 
   <div class="image-gallery">
-    <div class="image-container"><img src="img9.jpg" alt="Image 9"></div>
-    <div class="image-container"><img src="img10.jpg" alt="Image 10"></div>
-    <div class="image-container"><img src="img11.jpg" alt="Image 11"></div>
-    <div class="image-container"><img src="img12.jpg" alt="Image 12"></div>
-    <div class="image-container"><img src="img13.jpg" alt="Image 13"></div>
-    <div class="image-container"><img src="img14.jpg" alt="Image 14"></div>
-    <div class="image-container"><img src="img15.jpg" alt="Image 15"></div>
-    <div class="image-container"><img src="img16.jpg" alt="Image 16"></div>
-    <div class="image-container"><img src="img17.jpg" alt="Image 17"></div>
-    <div class="image-container"><img src="img18.jpg" alt="Image 18"></div>
-    <div class="image-container"><img src="img20.webp" alt="Image 20"></div>
-    <div class="image-container"><img src="img21.webp" alt="Image 21"></div>
-    <div class="image-container"><img src="img22.png" alt="Image 22"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img9.jpg" alt="Image 9"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img10.jpg" alt="Image 10"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img11.jpg" alt="Image 11"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img12.jpg" alt="Image 12"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img13.jpg" alt="Image 13"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img14.jpg" alt="Image 14"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img15.jpg" alt="Image 15"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img16.jpg" alt="Image 16"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img17.jpg" alt="Image 17"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img18.jpg" alt="Image 18"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img20.webp" alt="Image 20"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img21.webp" alt="Image 21"></div>
+    <div class="image-container" onclick="menuclose()"><img src="img22.png" alt="Image 22"></div>
   
   </div>
 
@@ -58,6 +58,11 @@
     function toggleMenu() {
       const menu = document.getElementById("dropdownMenu");
       menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    function menuclose() {
+      const menu2 = document.getElementById("dropdownMenu");
+      menu2.style.display = "none";
     }
   </script>
 
