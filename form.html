@@ -11,28 +11,28 @@
   <h3>SPEED CELEBRATION 2026</h3>
   <form>
   <div class="formgroup">
-    <label for="">NANE :</label>
-    <input value=""type="text">
+    <label for="nameinput">NANE :</label>
+    <input id="nameinput" value="" type="text">
     </div>
 
   <div class="formgroup">
-       <label for="">DESIGNATION :</label>
-    <input type="text" value="">
+       <label >DESIGNATION :</label>
+    <input id="designationinput" type="text" value="" >
     </div>
 
   <div class="formgroup">
-       <label for="">PHONE NUMBER :</label>
-    <input type="number">
+       <label for="phoneinput">PHONE NUMBER :</label>
+    <input id="phoneinput" type="tel" maxlength="10" pattern="[0-9] {10}">
     </div>
 
   <div class="formgroup">
-    <label id="sajish" for="">OFFICE :</label>
-    <input type="text">
+    <label id="office" for="officeinput">OFFICE :</label>
+    <input id="officeinput" type="text" >
   </div>
-
 <div class="formgroup">
   <label>DISTRICT :</label>
-  <select name="DISTRICT" id="">
+  <select name="DISTRICT" id="districtinput" >
+  <option value="0">Select</option>
   <option value="1">THIRUVANANTHAPURAM</option>
   <option value="2">KOLLAM</option>
   <option value="3">KOTTAYAM</option>
@@ -75,12 +75,24 @@
 <label id="totalcharge"></label>
 
 </form>
-    <button class="registernow" onclick="submit()">
+
+    <button type="submit" class="registernow" onclick="inputOKtest()">
       Submit
     </button>
 
- 
- </div>
+ </form>
+
+
+
+ <div id="alertmenu">
+  <h6 id="allelert"></h6>
+     <div id="okbut">
+     <button onclick="okbutton()">OK</button>
+    </div>
+</div>
+
+
 <script src="fom.js"></script>
+
 </body>
 </html>
