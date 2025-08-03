@@ -31,6 +31,7 @@ label{
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  z-index: 900;
 }
 .formgroup label {
   width: 150px;
@@ -40,3 +41,40 @@ label{
   padding: 5px;
 
 }
+
+#alertmenu {
+  z-index: 800;
+  display: none;
+  position: fixed;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  border-radius: 20px;
+  color: rgb(12, 1, 1);
+  width: 250px;
+  height: 70Px;
+  /* center kittan */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* center kittan */
+    background-color: rgb(240, 236, 217);
+  border: 2px solid black; padding: 10px;
+}
+
+#okbut{
+  position: fixed;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: rgb(12, 0, 0);
+  background-color: transparent;
+  border: transparent;
+  /* center kittan */
+  left: 50%;
+  top: 18%;
+  transform: translate(-50%,-50%);
+
