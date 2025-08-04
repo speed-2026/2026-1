@@ -1,98 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="form.css">
+<link rel="stylesheet" href="form.css">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <h2>REGISTRATION FORM</h2>
   <h3>SPEED CELEBRATION 2026</h3>
   <form>
-  <div class="formgroup">
-    <label for="nameinput">NANE :</label>
-    <input id="nameinput" value="" type="text">
+    <div class="formgroup">
+      <label for="nameinput">NANE :</label>
+      <input id="nameinput" value="" type="text">
     </div>
 
-  <div class="formgroup">
-       <label >DESIGNATION :</label>
-    <input id="designationinput" type="text" value="" >
+    <div class="formgroup">
+      <label>DESIGNATION :</label>
+      <input id="designationinput" type="text" value="">
     </div>
 
-  <div class="formgroup">
-       <label for="phoneinput">PHONE NUMBER :</label>
-    <input id="phoneinput" type="tel" maxlength="10" pattern="[0-9] {10}">
+    <div class="formgroup">
+      <label for="phoneinput">PHONE NUMBER :</label>
+      <input id="phoneinput" type="tel" maxlength="10" pattern="[0-9]{10}">
     </div>
 
-  <div class="formgroup">
-    <label id="office" for="officeinput">OFFICE :</label>
-    <input id="officeinput" type="text" >
-  </div>
-<div class="formgroup">
-  <label>DISTRICT :</label>
-  <select name="DISTRICT" id="districtinput" >
-  <option value="0">Select</option>
-  <option value="1">THIRUVANANTHAPURAM</option>
-  <option value="2">KOLLAM</option>
-  <option value="3">KOTTAYAM</option>
-  <option value="4">IDUKKI</option>
-  <option value="5">PATHANAMTHTTA</option>
-  <option value="6">ALAPPUZHA</option>
-  <option value="7">ERNAKULAM</option>
-  <option value="8">THRISSUR</option>
-  <option value="9">PALAKKAD</option>
-  <option value="10">MALAPPURAM</option>
-  <option value="11">KOZHIKODE</option>
-  <option value="12">WAYANAD</option>
-  <option value="13">KANNUR</option>
-  <option value="14">KASARGODE</option>
-  </select>
-</div>
+    <div class="formgroup">
+      <label id="office" for="officeinput">OFFICE :</label>
+      <input id="officeinput" type="text">
+    </div>
+    <div class="formgroup">
+      <label>DISTRICT :</label>
+      <select name="DISTRICT" id="districtinput">
+        <option value="0">Select</option>
+        <option value="1">THIRUVANANTHAPURAM</option>
+        <option value="2">KOLLAM</option>
+        <option value="3">KOTTAYAM</option>
+        <option value="4">IDUKKI</option>
+        <option value="5">PATHANAMTHTTA</option>
+        <option value="6">ALAPPUZHA</option>
+        <option value="7">ERNAKULAM</option>
+        <option value="8">THRISSUR</option>
+        <option value="9">PALAKKAD</option>
+        <option value="10">MALAPPURAM</option>
+        <option value="11">KOZHIKODE</option>
+        <option value="12">WAYANAD</option>
+        <option value="13">KANNUR</option>
+        <option value="14">KASARGODE</option>
+      </select>
+    </div>
 
-<div class="formgroup">
-    <label>METHODE OF PARTICIPATION</label>
-    <input type="radio" name="participation" value="single" onchange="single_family()">SINGLE</label>
-    <input type="radio" name="participation" value="family" onchange="single_family()">FAMILY</label>
-</div>
+    <div class="formgroup">
+      <label>METHODE OF PARTICIPATION</label>
+      <input type="radio" name="participation" value="single" onchange="single_family()">SINGLE</label>
+      <input type="radio" name="participation" value="family" onchange="single_family()">FAMILY</label>
+    </div>
 
 
-<div id="family" style="display: none">
-  <div class="formgroup">
-    <label>NUMBER OF FAMILY MEMBER</label>
-    <input id="familymember" type="number" name="fNo" value=""  onchange="amountcalc()">
-  </div>
-  <div class="formgroup">
-    <label>NUMBER OF CHILDRAN (BELOW 5 YEARS)</label>
-    <input id="childnumber" type="number" value="">
-  </div> 
-</div>
-  
-  
+    <div id="family" style="display: none">
+      <div class="formgroup">
+        <label>NUMBER OF FAMILY MEMBER</label>
+        <input id="familymember" type="number" name="fNo" value="" onchange="amountcalc()">
+      </div>
+      <div class="formgroup">
+        <label>NUMBER OF CHILDRAN (BELOW 5 YEARS)</label>
+        <input id="childnumber" type="number" value="">
+      </div>
+    </div>
 
-<label id="familyRS" style="display: none"></label><br>
-<label id="speedmember"></label><br>
-<label id="totalcharge"></label>
 
-</form>
 
-    <button type="submit" class="registernow" onclick="inputOKtest()">
-      Submit
-    </button>
+    <label id="familyRS" style="display: none"></label><br>
+    <label id="speedmember"></label><br>
+    <label id="totalcharge"></label>
 
  </form>
 
 
+  <button type="submit" class="registernow" onclick="inputOKtest(),submitForm()">
+    Submit
+  </button>
 
- <div id="alertmenu">
-  <h6 id="allelert"></h6>
-     <div id="okbut">
-     <button onclick="okbutton()">OK</button>
+ 
+
+
+
+
+
+  <div id="alertmenu">
+    <h6 id="allelert"></h6>
+    <div id="okbut">
+      <button onclick="okbutton()">OK</button>
     </div>
-</div>
+  </div>
 
 
-<script src="fom.js"></script>
+  <script src="fom.js"></script>
+  <script>
+    function submitForm() {
+      let name = document.getElementById("nameinput").value;
+      let designation = document.getElementById("designationinput").value;
+      let phone = document.getElementById("phoneinput").value;
+      let office = document.getElementById("officeinput").value;
+      let district = document.getElementById("districtinput").value;
+      let participation = document.querySelector('input[name="participation"]:checked')?.value || '';
+      let familyCount = document.getElementById("familymember").value || '0';
+      let childrenCount = document.getElementById("childnumber").value || '0';
+
+      // Optional: Validate required fields
+      if (!name || !designation || !phone || !office || district == "0") {
+        alert("Please fill all required fields");
+        return;
+      }
+
+      // Prepare data
+      const formData = {
+        name,
+        designation,
+        phone,
+        office,
+        district,
+        participation,
+        familyCount,
+        childrenCount
+      };
+
+      // 🔗 YOUR_SCRIPT_URL_HERE = Replace with your actual Apps Script URL
+      fetch("https://script.google.com/macros/s/AKfycbyITVzj8br6Y-u6oUHTRAArPmi8P7-BLXPUVJJIndQoFgKsGBhYcLa_qQIXPhzcKhpqAQ/exec", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.text())
+        .then(msg => {
+          document.getElementById("allelert").innerText = "✅ Successfully Registered!";
+          document.getElementById("alertmenu").style.display = "block";
+          document.getElementById("registration-form").reset();
+        })
+        .catch(err => {
+          document.getElementById("allelert").innerText = "❌ Error: " + err;
+          document.getElementById("alertmenu").style.display = "block";
+        });
+    }
+  </script>
 
 </body>
+
 </html>
