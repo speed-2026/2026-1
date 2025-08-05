@@ -77,6 +77,13 @@ else if (fmlyno == "" && selectfmy == "family") {
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Please enter family member details";
   }
+
+else if (document.querySelector('input[name="participation"]:checked').value == "single") {
+    alertmenu.style.display = 'block';
+    document.getElementById("familymember").value = 1;
+  }
+
+    
   else
   { 
     alertmenu.style.display = 'block';
