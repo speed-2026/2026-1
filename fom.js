@@ -35,6 +35,27 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
 }
 
 
+function submitForm() {
+      let name = document.getElementById("nameinput").value;
+      let designation = document.getElementById("designationinput").value;
+      let phone = document.getElementById("phoneinput").value;
+      let office = document.getElementById("officeinput").value;
+      let district = document.getElementById("districtinput").value;
+      let participation = document.querySelector('input[name="participation"]:checked')?.value || '';
+      let familyCount = document.getElementById("familymember").value || '0';
+      let childrenCount = document.getElementById("childnumber").value || '0';
+
+      // Optional: Validate required fields
+      if (!name || !designation || !phone || !office || district == "0") {
+        alert("Please fill all required fields");
+        return;
+      }
+	document.getElementById("myForm").submit();
+      // Prepare data
+    
+    }
+
+
 function inputOKtest() {
   let nme = document.getElementById("nameinput").value;
   let desi = document.getElementById("designationinput").value;
