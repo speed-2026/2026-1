@@ -47,7 +47,7 @@ function submitForm() {
 
       // Optional: Validate required fields
       if (!name || !designation || !phone || !office || district == "0") {
-        alert("Please fill all required fields");
+        inputOKtest();
         return;
       }
 	document.getElementById("myForm").submit();
