@@ -11,29 +11,29 @@
 <body>
   <h2>REGISTRATION FORM</h2>
   <h3>SPEED CELEBRATION 2026</h3>
-  <form method="post" action="https://script.google.com/macros/s/AKfycbyITVzj8br6Y-u6oUHTRAArPmi8P7-BLXPUVJJIndQoFgKsGBhYcLa_qQIXPhzcKhpqAQ/exec">
+  <form id="myForm" action="https://script.google.com/macros/s/AKfycbyBOh-kgXnVDyeTLcnbBjrTahpo1ZbbCIEcMut7IXciWe_oZ8Kdjd8Gb1T_xg_1onLO/exec">
     <div class="formgroup">
       <label for="nameinput">NANE :</label>
-      <input id="nameinput" value="" type="text">
+      <input id="nameinput" name="name" value="" type="text">
     </div>
 
     <div class="formgroup">
       <label>DESIGNATION :</label>
-      <input id="designationinput" type="text" value="">
+      <input id="designationinput" name="designation" type="text" value="">
     </div>
 
     <div class="formgroup">
       <label for="phoneinput">PHONE NUMBER :</label>
-      <input id="phoneinput" type="tel" maxlength="10" pattern="[0-9]{10}">
+      <input id="phoneinput" name="phone" type="tel" maxlength="10" pattern="[0-9]{10}">
     </div>
 
     <div class="formgroup">
       <label id="office" for="officeinput">OFFICE :</label>
-      <input id="officeinput" type="text">
+      <input id="officeinput" name="office" type="text">
     </div>
     <div class="formgroup">
       <label>DISTRICT :</label>
-      <select name="DISTRICT" id="districtinput">
+      <select name="district" id="districtinput">
         <option value="0">Select</option>
         <option value="1">THIRUVANANTHAPURAM</option>
         <option value="2">KOLLAM</option>
@@ -62,11 +62,11 @@
     <div id="family" style="display: none">
       <div class="formgroup">
         <label>NUMBER OF FAMILY MEMBER</label>
-        <input id="familymember" type="number" name="fNo" value="" onchange="amountcalc()">
+        <input id="familymember" name="familyCount" type="number" name="fNo" value="" onchange="amountcalc()">
       </div>
       <div class="formgroup">
         <label>NUMBER OF CHILDRAN (BELOW 5 YEARS)</label>
-        <input id="childnumber" type="number" value="">
+        <input id="childnumber" name="childrenCount" type="number" value="">
       </div>
     </div>
 
@@ -114,36 +114,9 @@
         alert("Please fill all required fields");
         return;
       }
-
+	document.getElementById("myForm").submit();
       // Prepare data
-      const formData = {
-        name,
-        designation,
-        phone,
-        office,
-        district,
-        participation,
-        familyCount,
-        childrenCount
-      };
-
-      // 🔗 YOUR_SCRIPT_URL_HERE = Replace with your actual Apps Script URL
-      fetch("https://script.google.com/macros/s/AKfycbyITVzj8br6Y-u6oUHTRAArPmi8P7-BLXPUVJJIndQoFgKsGBhYcLa_qQIXPhzcKhpqAQ/exec", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }).then(res => res.text())
-        .then(msg => {
-          document.getElementById("allelert").innerText = "✅ Successfully Registered!";
-          document.getElementById("alertmenu").style.display = "block";
-          document.getElementById("registration-form").reset();
-        })
-        .catch(err => {
-          document.getElementById("allelert").innerText = "❌ Error: " + err;
-          document.getElementById("alertmenu").style.display = "block";
-        });
+    
     }
   </script>
 
