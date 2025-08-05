@@ -86,7 +86,7 @@ else if (document.querySelector('input[name="participation"]:checked').value == 
     
   else
   { 
-    submitForm()
+    
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
 
