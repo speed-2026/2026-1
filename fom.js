@@ -81,6 +81,8 @@ else if (fmlyno == "" && selectfmy == "family") {
 else if (document.querySelector('input[name="participation"]:checked').value == "single") {
     alertmenu.style.display = 'block';
     document.getElementById("familymember").value = 1;
+    document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
+    document.getElementById("myForm").submit();
   }
 
     
@@ -97,3 +99,4 @@ else if (document.querySelector('input[name="participation"]:checked').value == 
 function okbutton(){
   alertmenu.style.display = 'none';
 }
+
