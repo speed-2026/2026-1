@@ -1,4 +1,5 @@
 
+
 // function for if , display family details 
 function single_family() {
     if (document.querySelector('input[name="participation"]:checked').value == "family")
@@ -7,6 +8,7 @@ function single_family() {
   document.getElementById("familyRS").style.display = "block";
   document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
+  document.getElementById("saji").style.display = "block";
   
  amountcalc();
 }
@@ -16,6 +18,7 @@ else
     document.getElementById("familyRS").style.display = "none";
     document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
+  document.getElementById("saji").style.display = "block";
 
   amountcalc();
 }
@@ -88,8 +91,8 @@ else if (document.querySelector('input[name="participation"]:checked').value == 
     
   else
   { 
-    
     alertmenu.style.display = 'block';
+    document.getElementById("saji").style.display = "none";
     document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
     document.getElementById("myForm").submit();
   }
@@ -99,4 +102,5 @@ else if (document.querySelector('input[name="participation"]:checked').value == 
 function okbutton(){
   alertmenu.style.display = 'none';
 }
+
 
