@@ -110,7 +110,7 @@ else if (document.querySelector('input[name="participation"]:checked').value == 
     
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
-
+   submitForm()
   }
 }
 
