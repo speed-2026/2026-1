@@ -73,7 +73,7 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
   else if
     (rom == 0){
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Select romm required or not";
+    document.getElementById("allelert").innerText = "Select room required or not";
   }
 
   else if
