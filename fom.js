@@ -43,6 +43,7 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
   let desi = document.getElementById("designationinput").value;
   let phno = document.getElementById("phoneinput").value;
   let ofc = document.getElementById("officeinput").value;
+  let rom = document.getElementById("roominput").value;
   let drist = document.getElementById("districtinput").value;
   let fmlyno = document.getElementById("familymember").value;
   let selectfmy = document.querySelector('input[name="participation"]:checked').value;
@@ -68,6 +69,11 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
     (ofc == ""){
   alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Enter your office name";
+  }
+  else if
+    (rom == 0){
+    alertmenu.style.display = 'block';
+    document.getElementById("allelert").innerText = "Select romm required or not";
   }
 
   else if
