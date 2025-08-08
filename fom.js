@@ -88,6 +88,7 @@ else if (fmlyno == "" && selectfmy == "family") {
   }
 
 else if (document.querySelector('input[name="participation"]:checked').value == "single") {
+    document.getElementById("saji").style.display = "none";
     alertmenu.style.display = 'block';
     document.getElementById("familymember").value = 1;
     document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
