@@ -1,5 +1,3 @@
-
-
 // function for if , display family details 
 function single_family() {
     if (document.querySelector('input[name="participation"]:checked').value == "family")
@@ -41,7 +39,7 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
   function inputOKtest() {
   let nme = document.getElementById("nameinput").value;
   let desi = document.getElementById("designationinput").value;
-  let phno = document.getElementById("phoneinput").value;
+  let phno = document.getElementById("phoneinput").value.trim(); // trim added
   let ofc = document.getElementById("officeinput").value;
   let rom = document.getElementById("roominput").value;
   let drist = document.getElementById("districtinput").value;
@@ -49,61 +47,65 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
   let selectfmy = document.querySelector('input[name="participation"]:checked').value;
 
   if (nme == "") {
-
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Enter your name";
-
   }
-  else if
-    (desi == ""){
+  else if (desi == "") {
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Enter your designation";
   }
-  else if
-    (phno === ""){
-
+  else if (phno === "") {
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Enter your phone number";
   }
-  else if
-    (ofc == ""){
-  alertmenu.style.display = 'block';
+  else if (!/^\d{10}$/.test(phno)) {  // 10 digit validation
+    alertmenu.style.display = 'block';
+    document.getElementById("allelert").innerText = "Enter a valid 10-digit phone number";
+  }
+  else if (ofc == "") {
+    alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Enter your office name";
   }
-  else if
-    (rom == 0){
+  else if (rom == 0) {
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Select room required or not";
   }
-
-  else if
-    (drist == 0){
+  else if (drist == 0) {
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Select your district";
   }
-
-else if (fmlyno == "" && selectfmy == "family") {
+  else if (fmlyno == "" && selectfmy == "family") {
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Please enter family member details";
   }
-
-else if (document.querySelector('input[name="participation"]:checked').value == "single") {
-    document.getElementById("saji").style.display = "none";
-    alertmenu.style.display = 'block';
-    document.getElementById("familymember").value = 1;
-    document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
-    document.getElementById("myForm").submit();
-  }
-
-    
-  else
-  { 
+  else {
+    // Success case
     alertmenu.style.display = 'block';
     document.getElementById("saji").style.display = "none";
     document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
-    document.getElementById("myForm").submit();
+
+    // Submit to Apps Script, then open more.html
+    const form = document.getElementById("myForm");
+    const actionUrl = form.getAttribute("action");
+    const params = new URLSearchParams(new FormData(form));
+
+    fetch(actionUrl + "?" + params.toString(), {
+      method: 'GET',
+      mode: 'cors'
+    })
+    .then(() => {
+      window.location.href = "more.html"; // same tab
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById("allelert").innerText = "Submission failed. Please try again.";
+      alertmenu.style.display = 'block';
+      document.getElementById("saji").style.display = "block";
+    });
   }
 }
+
+
 
 
 function okbutton(){
