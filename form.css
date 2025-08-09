@@ -80,3 +80,18 @@ label{
   transform: translate(-50%,-50%);
 
 }
+
+select{
+width: 50px;
+background-color: blanchedalmond;
+}
+
+
+  .half-width {
+    width: 48%; /* half width + small gap */
+    display: inline-block;
+    margin-right: 4%;
+  }
+  .half-width:last-child {
+    margin-right: 0;
+  }
