@@ -65,8 +65,8 @@
 
     <div class="formgroup">
       <label>METHOD OF PARTICIPATION</label>
-      <input type="radio" name="participation" value="single" onchange="single_family()">SINGLE</label>
-      <input type="radio" name="participation" value="family" onchange="single_family()">FAMILY</label>
+      <input type="radio" name="participation" value="single" onchange="single_family()">SINGLE</input>
+      <input type="radio" name="participation" value="family" onchange="single_family()">FAMILY</input>
     </div>
 
 
@@ -81,24 +81,18 @@
       </div>
     </div>
 
-	  
-	  <div id="tourqustion" class="formgroup" style="display: none">
+    <div id="tourqustion" class="formgroup" style="display: none">
       <label>ARE YOU JOINING THE ONE-DAY TOUR?</label>
       <input type="radio" name="tour1" value="no" onchange="tour()">NO</input>
       <input type="radio" name="tour1" value="yes" onchange="tour()">YES</input>
     </div>
     
     <div class="formgroup" id="tourselection1" style="display: none">
-      <input type="radio" name="location" value="LOCATION-1" onchange="">LOCATION-1</label>
-    </div>
-    <div class="formgroup" id="tourselection2" style="display: none">
-      <input type="radio" name="location" value="LOCATION-2" onchange="">LOCATION-2</label>
-    </div>  
-    <div class="formgroup" id="tourselection3" style="display: none">
+      <input type="radio" name="location" value="LOCATION-1" onchange="">LOCATION-1</label><br>
+      <input type="radio" name="location" value="LOCATION-2" onchange="">LOCATION-2</label><br>
       <input type="radio" name="location" value="LOCATION-3" onchange="">LOCATION-3</label>
     </div>
-
-
+    
 
     <label id="familyRS" style="display: none"></label><br>
     <label id="speedmember"></label><br>
@@ -125,4 +119,3 @@
 </body>
 
 </html>
-
