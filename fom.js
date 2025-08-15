@@ -112,4 +112,21 @@ function okbutton(){
   alertmenu.style.display = 'none';
 }
 
+function tour(){
+  if (document.querySelector('input[name="tour1"]:checked').value == "yes")
+
+{
+  document.getElementById("tourselection1").style.display = "block"; 
+  document.getElementById("tourselection2").style.display = "block";
+  document.getElementById("tourselection3").style.display = "block";
+}
+else
+  {
+    document.getElementById("tourselection1").style.display = "none"; 
+    document.getElementById("tourselection2").style.display = "none";
+    document.getElementById("tourselection3").style.display = "none";
+  }
+
+}
+
 
