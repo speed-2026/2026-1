@@ -7,6 +7,8 @@ function single_family() {
   document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
   document.getElementById("saji").style.display = "block";
+  document.getElementById("tourqustion").style.display = "block";
+
   
  amountcalc();
 }
@@ -17,6 +19,7 @@ else
     document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
   document.getElementById("saji").style.display = "block";
+   document.getElementById("tourqustion").style.display = "block";
 
   amountcalc();
 }
@@ -45,7 +48,7 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
   let drist = document.getElementById("districtinput").value;
   let fmlyno = document.getElementById("familymember").value;
   let selectfmy = document.querySelector('input[name="participation"]:checked').value;
-
+  let tourselect = document.querySelector('input[name="tour1"]:checked').value;
   if (nme == "") {
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Enter your name";
@@ -106,8 +109,6 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
 }
 
 
-
-
 function okbutton(){
   alertmenu.style.display = 'none';
 }
@@ -117,16 +118,14 @@ function tour(){
 
 {
   document.getElementById("tourselection1").style.display = "block"; 
-  document.getElementById("tourselection2").style.display = "block";
-  document.getElementById("tourselection3").style.display = "block";
 }
 else
   {
     document.getElementById("tourselection1").style.display = "none"; 
-    document.getElementById("tourselection2").style.display = "none";
-    document.getElementById("tourselection3").style.display = "none";
+  
   }
 
 }
+
 
 
