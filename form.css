@@ -80,6 +80,6 @@ body {
 
 @media (max-width: 600px) {
   select {
-    width: 60%; /* Mobile full width */
+    width: 600%; /* Mobile full width */
   }
 }
