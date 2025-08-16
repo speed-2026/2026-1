@@ -45,6 +45,7 @@ body {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
+    display: none;
   }
   .registernow:hover {
     background-color: #6d28d9;
@@ -76,10 +77,19 @@ body {
     border-radius: 8px;
     cursor: pointer;
   }
-
+#locationpoint{
+  font-weight: bold;
+  color: darkblue;
+  font-size: 15px;
+}
+#common{
+  font-size: 15px;
+  font-weight: bold;
+  color: darkgreen;
+}
 
 @media (max-width: 600px) {
   select {
-    width: 600%; /* Mobile full width */
+    width: 600px; /* Mobile full width */
   }
 }
