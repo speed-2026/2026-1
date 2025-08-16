@@ -2,8 +2,9 @@
 function single_family() {
     if (document.querySelector('input[name="participation"]:checked').value == "family")
    {
-   document.getElementById("family").style.display = "block";
-  document.getElementById("familyRS").style.display = "block";
+  document.getElementById("family").style.display = "block";
+  document.getElementById("amount-details-family").style.display = "block";
+  document.getElementById("amount-details-single").style.display = "none";
   document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
   document.getElementById("saji").style.display = "block";
@@ -14,27 +15,44 @@ function single_family() {
 }
 else
 {
-    document.getElementById("family").style.display = "none";
-    document.getElementById("familyRS").style.display = "none";
-    document.getElementById("familymember").value = "";
+  document.getElementById("family").style.display = "none";
+  document.getElementById("amount-details-family").style.display = "none";
+  document.getElementById("amount-details-single").style.display = "block";
+  document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
   document.getElementById("saji").style.display = "block";
-   document.getElementById("tourqustion").style.display = "block";
+  document.getElementById("tourqustion").style.display = "block";
 
   amountcalc();
 }
-  
 }
-  
+
 // function testing, innerHtml value adding
 
 function amountcalc() {
- let familycount = document.getElementById("familymember").value;
+let familycount = Number(document.getElementById("familymember").value);
+let touramount = 0;
+let tourmember = 0;
+let speedme = 1;
+
+if (document.querySelector('input[name="tour1"]:checked').value == "yes")
+{tourmember = speedme + familycount;
+touramount = 1700 * tourmember;
+document.getElementById("tourdisplay1").innerText = "TOUR AMOUNT = " + touramount;
+document.getElementById("tourdisplay").innerText = "TOUR AMOUNT = " + touramount;
+}
+else{
+document.getElementById("tourdisplay1").innerText = "";
+document.getElementById("tourdisplay").innerText = "";
+}
 let Total_family = familycount * 500;
  document.getElementById("familyRS").innerText = "FAMILY MEMBER/HEAD 500 x " + familycount + "=Rs  " + Total_family;
  document.getElementById("speedmember").innerHTML = "SPEED MEMBER 1500"
-let Total = Total_family + 1500
+ document.getElementById("speedmember1").innerHTML = "SPEED MEMBER 1500"
+let Total = Total_family + 1500 + touramount;
 document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
+document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
+
 }
 
 
@@ -117,15 +135,17 @@ function tour(){
   if (document.querySelector('input[name="tour1"]:checked').value == "yes")
 
 {
+  amountcalc();
   document.getElementById("tourselection1").style.display = "block"; 
+
 }
 else
   {
+    amountcalc();
     document.getElementById("tourselection1").style.display = "none"; 
-  
-  }
-
+ }
 }
+
 
 
 
