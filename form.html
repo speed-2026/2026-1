@@ -65,15 +65,17 @@
 
     <div class="formgroup">
       <label>METHOD OF PARTICIPATION</label>
+      <div id="common">
       <input type="radio" name="participation" value="single" onchange="single_family()">SINGLE</input>
       <input type="radio" name="participation" value="family" onchange="single_family()">FAMILY</input>
+      </div>
     </div>
 
 
     <div id="family" style="display: none">
       <div class="formgroup">
         <label>NUMBER OF FAMILY MEMBER</label>
-        <input id="familymember" name="familyCount" type="number" name="fNo" value="" onchange="amountcalc()">
+        <input id="familymember" name="familyCount" type="number" value="" onchange="amountcalc()">
       </div>
       <div class="formgroup">
         <label>NUMBER OF CHILDRAN (BELOW 5 YEARS)</label>
@@ -84,24 +86,39 @@
 	  
  <div id="tourqustion" style="display: none">
     <div class="formgroup"> 
-      <label>WILL YOU JOIN <br> ONE-DAY TOUR?</label>
+      <label>WILL YOU JOIN ONE-DAY TOUR?</label>
+      <div id="common">
       <input type="radio" name="tour1" value="no" onchange="tour()">NO</input>
       <input type="radio" name="tour1" value="yes" onchange="tour()">YES</input>
+      </div>
     </div>
  </div>   
 
 <div id="tourselection1" style="display: none">
-    <div>
-      <input type="radio" width="20%" name="location" value="LOCATION-1">LOCATION-1</label><br>
-      <input type="radio" name="location" value="LOCATION-2">LOCATION-2</label><br>
-      <input type="radio" name="location" value="LOCATION-3">LOCATION-3</label>
+    <div id="locationpoint">
+      <input type="radio" name="location" value="KAKKADAMPOIL">KAKKADAMPOIL</label><br>
+      <input type="radio" name="location" value="THUSARAGIRI">THUSARAGIRI</label><br>
+      <input type="radio" name="location" value="AKALAPUZA">AKALAPUZA</label>
     </div>
  </div>   
-    
-
-    <label id="familyRS" style="display: none"></label><br>
+   <br>
+<div id="amount-details-family" style="display: none">
+  <div>
+    <label id="tourdisplay"></label><br>
+    <label id="familyRS" ></label><br>
     <label id="speedmember"></label><br>
     <label id="totalcharge"></label>
+  </div>
+</div>
+
+<div id="amount-details-single" style="display: none">
+  <div>
+    <label id="tourdisplay1"></label><br>
+    <label id="speedmember1"></label><br>
+    <label id="totalcharge1"></label>
+  </div>
+</div>
+
 
 	</form>
 
