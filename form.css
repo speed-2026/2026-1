@@ -73,7 +73,7 @@ body {
   }
 
 .locationpoint label{
-  display: flex;
+  display: black;
   align-items: baseline;
   margin-bottom: 6px;
   font-weight: bold;  /* main label bold, ithine normal aakum */
