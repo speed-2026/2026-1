@@ -30,9 +30,11 @@ body {
     background: #fff;
   }
   .radio-group {
+    margin-top:  0px;
     display: flex;
-    gap: 15px;
+    gap: 1px;
     flex-wrap: wrap;
+
   }
   .registernow {
     background-color: #7c3aed;
@@ -77,19 +79,33 @@ body {
     border-radius: 8px;
     cursor: pointer;
   }
-#locationpoint{
-  font-weight: bold;
-  color: darkblue;
-  font-size: 15px;
+.locationpoint label{
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-weight: bold;  /* main label bold, ithine normal aakum */
+
+}
+.locationpoint input[type="radio"] {
+ margin-right: 6px;
+ 
 }
 #common{
+  
+  align-items: baseline;
   font-size: 15px;
   font-weight: bold;
   color: darkgreen;
 }
 
-@media (max-width: 600px) {
-  select {
-    width: 600px; /* Mobile full width */
-  }
+.radio-group label {
+  margin-right: 35px;
+  display: flex;
+  align-items: center;  /* vertical center */
+  gap: 1px;             /* buttonum textum idayil gap */
+  font-weight: bold;  /* main label bold, ithine normal aakum */
+}
+
+.radio-group input[type="radio"] {
+  margin: 0px;  /* default margin remove */
 }
