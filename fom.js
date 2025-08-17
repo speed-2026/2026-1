@@ -27,6 +27,7 @@ else
 }
 }
 
+
 // function testing, innerHtml value adding
 
 function amountcalc() {
@@ -34,10 +35,20 @@ let familycount = Number(document.getElementById("familymember").value);
 let touramount = 0;
 let tourmember = 0;
 let speedme = 1;
+// a different if function
+  let Locationrate = 0;
+  let loc = document.querySelector('input[name="location"]:checked');
+  if (loc) {
+    if (loc.value == "KAKKADAMPOIL") Locationrate = 2000;
+    else if (loc.value == "THUSARAGIRI") Locationrate = 1000;
+    else if (loc.value == "AKALAPUZHA") Locationrate = 1700;
+  }
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 if (document.querySelector('input[name="tour1"]:checked').value == "yes")
 {tourmember = speedme + familycount;
-touramount = 1700 * tourmember;
+touramount = Locationrate * tourmember;
 document.getElementById("tourdisplay1").innerText = "TOUR AMOUNT = " + touramount;
 document.getElementById("tourdisplay").innerText = "TOUR AMOUNT = " + touramount;
 }
@@ -54,7 +65,6 @@ document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
 document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
 
 }
-
 
 
   function inputOKtest() {
@@ -99,11 +109,12 @@ document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Please enter family member details";
   }
+
   else {
     // Success case
-    alertmenu.style.display = 'block';
     document.getElementById("saji").style.display = "none";
-    document.getElementById("allelert").innerText = "Thankyou for register Speed Celebration 2026";
+    alertmenu.style.display = 'block';
+    document.getElementById("allelert").innerText = "Uploading........";
 
     // Submit to Apps Script, then open more.html
     const form = document.getElementById("myForm");
@@ -145,7 +156,6 @@ else
     document.getElementById("tourselection1").style.display = "none"; 
  }
 }
-
 
 
 
