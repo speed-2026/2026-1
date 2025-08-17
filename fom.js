@@ -35,6 +35,7 @@ let familycount = Number(document.getElementById("familymember").value);
 let touramount = 0;
 let tourmember = 0;
 let speedme = 1;
+
 // a different if function
   let Locationrate = 0;
   let loc = document.querySelector('input[name="location"]:checked');
@@ -63,6 +64,7 @@ let Total_family = familycount * 500;
 let Total = Total_family + 1500 + touramount;
 document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
 document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
+document.getElementById("tot").value = Total;
 
 }
 
@@ -79,35 +81,42 @@ document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
   let tourselect = document.querySelector('input[name="tour1"]:checked').value;
   if (nme == "") {
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Enter your name";
+    document.getElementById("allelert").innerText = "Enter your name !";
   }
   else if (desi == "") {
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Enter your designation";
+    document.getElementById("allelert").innerText = "Enter designation !";
+    return;
   }
   else if (phno === "") {
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Enter your phone number";
+    document.getElementById("allelert").innerText = "Enter your phone number !";
+    return;
   }
   else if (!/^\d{10}$/.test(phno)) {  // 10 digit validation
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Enter a valid 10-digit phone number";
+    document.getElementById("allelert").innerText = "Enter 10-digit phone number!";
+    return;
   }
   else if (ofc == "") {
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Enter your office name";
+    document.getElementById("allelert").innerText = "Enter Office name !";
+    return;
   }
   else if (rom == 0) {
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Select room required or not";
+    document.getElementById("allelert").innerText = "Select room details !";
+    return;
   }
   else if (drist == 0) {
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Select your district";
+    document.getElementById("allelert").innerText = "Select your district !";
+    return;
   }
   else if (fmlyno == "" && selectfmy == "family") {
     alertmenu.style.display = 'block';
-    document.getElementById("allelert").innerText = "Please enter family member details";
+    document.getElementById("allelert").innerText = "Enter family details !";
+    return;
   }
 
   else {
@@ -115,6 +124,8 @@ document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
     document.getElementById("saji").style.display = "none";
     alertmenu.style.display = 'block';
     document.getElementById("allelert").innerText = "Uploading........";
+    document.getElementById("succ").style.display = "block";
+     document.getElementById("error").style.display = "none";
 
     // Submit to Apps Script, then open more.html
     const form = document.getElementById("myForm");
@@ -131,8 +142,9 @@ document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
     .catch(err => {
       console.error(err);
       document.getElementById("allelert").innerText = "Submission failed. Please try again.";
+      document.getElementById("succ").style.display = "none";
       alertmenu.style.display = 'block';
-      document.getElementById("saji").style.display = "block";
+      document.getElementById("saji").style.display = "none";
     });
   }
 }
@@ -156,6 +168,3 @@ else
     document.getElementById("tourselection1").style.display = "none"; 
  }
 }
-
-
-
