@@ -127,19 +127,20 @@
   </div>
 </div>
 
+<input type="hidden" id="tot" name="totalamount">
 
 	</form>
 
   <button type="button" id="saji" class="registernow" onclick="inputOKtest()">
     SUBMIT
   </button>
+  
 
 
-  <div id="alertmenu">
-    <h6 id="allelert"></h6>
-    <div id="okbut">
-      <button onclick="okbutton()">OK</button>
-    </div>
+  <div id="alertmenu" onclick="okbutton()">
+    <label id="allelert"></label><br>
+    <label id="error">🙂✖️</label>
+    <label id="succ" style="display: none">🥰 ✅</label>
   </div>
 
 
