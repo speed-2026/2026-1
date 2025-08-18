@@ -73,16 +73,14 @@ body {
   }
 
 .locationpoint label{
-  display: black;
-  align-items: baseline;
-  margin-bottom: 6px;
-  font-weight: bold;  /* main label bold, ithine normal aakum */
+  width: 250px;
+  display: inline-block;
+  gap: 1px;            
+  font-weight: bold; 
+  width: 100px;  
+  color: rgb(23, 32, 112);
+}
 
-}
-.locationpoint input[type="radio"] {
- margin-right: 6px;
- 
-}
 #common{
   
   align-items: baseline;
@@ -97,6 +95,10 @@ body {
   align-items: center;  /* vertical center */
   gap: 1px;             /* buttonum textum idayil gap */
   font-weight: bold;  /* main label bold, ithine normal aakum */
+}
+
+.radio-group input[type="radio"] {
+  margin: 0px;  /* default margin remove */
 }
 
 .radio-group input[type="radio"] {
