@@ -51,7 +51,7 @@ if (document.querySelector('input[name="tour1"]:checked').value == "yes")
 {tourmember = speedme + familycount;
 touramount = Locationrate * tourmember;
 document.getElementById("tourdisplay1").innerText = "TOUR AMOUNT = " + touramount;
-document.getElementById("tourdisplay").innerText = "TOUR AMOUNT = " + touramount + " (ROOM RENT EXTRA)";
+document.getElementById("tourdisplay").innerText = "TOUR AMOUNT = " + touramount;
 }
 else{
 document.getElementById("tourdisplay1").innerText = "";
@@ -63,7 +63,7 @@ let Total_family = familycount * 500;
  document.getElementById("speedmember1").innerHTML = "SPEED MEMBER 1500"
 let Total = Total_family + 1500 + touramount;
 document.getElementById("totalcharge").innerText = "TOTAL AMOUNT = " + Total;
-document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total;
+document.getElementById("totalcharge1").innerText = "TOTAL AMOUNT = " + Total + " (ROOM RENT EXTRA)";
 document.getElementById("tot").value = Total;
 
 }
