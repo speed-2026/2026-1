@@ -13,7 +13,17 @@
     }
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+    #searchBox {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
     }
     .card {
       background: white;
@@ -22,6 +32,10 @@
       padding: 15px;
       margin: 10px auto;
       max-width: 400px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
     }
     .card h3 {
       margin: 0;
@@ -43,35 +57,63 @@
   </style>
 </head>
 <body>
-  <h2>SPEED e DIRECTORY </h2>
+  <h2>SPEED e DIRECTORY</h2>
+  <input type="text" id="searchBox" placeholder="Search by name, place, blood group...">
+  
   <div id="contacts"></div>
 
   <script>
-    // നിങ്ങളുടെ published web app URL ഇവിടെ ചേർക്കുക
     const url = "https://script.google.com/macros/s/AKfycbw1g_eSfHXXRUX9G1NNXanikqll5BfJ1OziYI2rVaYQ0iMQbPzdBjUOGr9AiMDh0Bpb/exec";
 
+    let peopleData = [];
+
+    // Data load
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const container = document.getElementById("contacts");
-        data.forEach(person => {
-          const card = document.createElement("div");
-          card.className = "card";
-          card.innerHTML = `
-            <h3>${person["Name"]}</h3>
-            <p><strong>House:</strong> ${person["House name or number"]}</p>
-            <p><strong>Place:</strong> ${person["Place"]}, ${person["District"]}</p>
-            <p><strong>Phone:</strong> <span class="phone">${person["Phone number"]}</span></p>
-            <p><strong>Designation:</strong> ${person["Designation"]}</p>
-            <p><strong>Office:</strong> ${person["Office address"]}</p>
-            <p><strong>Blood Group:</strong> <span class="blood">${person["Blood group"]}</span></p>
-          `;
-          container.appendChild(card);
-        });
+        peopleData = data;
+        displayContacts(data);
       })
       .catch(err => {
         document.getElementById("contacts").innerHTML = "<p>Error loading data</p>";
       });
+
+    // Function to show contacts
+    function displayContacts(data) {
+      const container = document.getElementById("contacts");
+      container.innerHTML = ""; // clear old data
+      if (data.length === 0) {
+        container.innerHTML = "<p>No matching contacts found</p>";
+        return;
+      }
+      data.forEach(person => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <h3>${person["Name"]}</h3>
+          <p><strong>House:</strong> ${person["House name or number"]}</p>
+          <p><strong>Place:</strong> ${person["Place"]}, ${person["District"]}</p>
+          <p><strong>Phone:</strong> <span class="phone">${person["Phone number"]}</span></p>
+          <p><strong>Designation:</strong> ${person["Designation"]}</p>
+          <p><strong>Office:</strong> ${person["Office address"]}</p>
+          <p><strong>Blood Group:</strong> <span class="blood">${person["Blood group"]}</span></p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Search filter
+    document.getElementById("searchBox").addEventListener("input", function() {
+      const searchTerm = this.value.toLowerCase();
+      const filtered = peopleData.filter(person =>
+        (person["Name"] && person["Name"].toLowerCase().includes(searchTerm)) ||
+        (person["Place"] && person["Place"].toLowerCase().includes(searchTerm)) ||
+        (person["District"] && person["District"].toLowerCase().includes(searchTerm)) ||
+        (person["Designation"] && person["Designation"].toLowerCase().includes(searchTerm)) ||
+        (person["Blood group"] && person["Blood group"].toLowerCase().includes(searchTerm))
+      );
+      displayContacts(filtered);
+    });
   </script>
 </body>
 </html>
