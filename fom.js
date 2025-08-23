@@ -138,6 +138,7 @@ document.getElementById("tot").value = Total;
     })
     .then(() => {
       window.location.href = "more.html"; // same tab
+      alertmenu.style.display = 'none'; 
     })
     .catch(err => {
       console.error(err);
