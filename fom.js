@@ -8,7 +8,7 @@ function single_family() {
   document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
   document.getElementById("saji").style.display = "block";
-  document.getElementById("tourqustion").style.display = "block";
+ // document.getElementById("tourqustion").style.display = "block";
 
   
  amountcalc();
@@ -21,7 +21,7 @@ else
   document.getElementById("familymember").value = "";
   document.getElementById("childnumber").value = "";
   document.getElementById("saji").style.display = "block";
-  document.getElementById("tourqustion").style.display = "block";
+  // document.getElementById("tourqustion").style.display = "block";
 
   amountcalc();
 }
