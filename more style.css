@@ -20,8 +20,11 @@
 
 }
 
-#reg {color: gold; 
-background-color: brown;}
+#reg {color: rgb(236, 235, 135); 
+background-color: rgb(163, 29, 29);}
+
+#reg1 {color: white; 
+background-color: rgb(116, 5, 5);}
 
 .box-container{
 	display: flex;
