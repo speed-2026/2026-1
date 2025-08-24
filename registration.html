@@ -53,6 +53,10 @@ p { margin: 6px 0; font-size:15px; }
   font-size: 18px;
   color: #333;
 }
+#paiddetails{
+  font-weight: bold;
+  color: #075819;
+}
 
 /* ⭕ Spinner animation */
 .spinner {
@@ -113,13 +117,15 @@ function displayData(data) {
     let phone  = item["Phone No"] || item["Phone"] || "";
     let office = item["Office"] || "";
     let district = item["District"] || "";
+    let pay = item["Paid"] || "";
 
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <p class="name">${name}</p>
       <p>📞 ${phone}</p>
-      <p>🏢 ${office}</p>
+      <p>🏢Office: ${office}</p>
       <p>📍 ${district}</p>
+      <p>💰Paid Rs. ${pay}.00/-</p>
     `;
     dataList.appendChild(listItem);
   });
